@@ -39,7 +39,7 @@ const EyeSaccadeAnimation: React.FC<EyeSaccadeAnimationProps> = ({
   targetBColor,
 }) => {
   const headCenterX = width / 2;
-  const headCenterY = height / 2;
+  const headCenterY = height / 2 + 20; // 얼굴 이미지를 아래로 이동
 
   const HEAD_RADIUS = Math.min(width / 4, height / 2.5);
   const IRIS_RADIUS = HEAD_RADIUS * 0.35;

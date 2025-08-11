@@ -61,7 +61,7 @@ const App: React.FC = () => {
         </aside>
       </main>
        <footer className="w-full max-w-5xl mt-12 text-center text-gray-500 text-xs">
-        <p>&copy; 2024 가속뇌 운동 시뮬레이션. 닥터대니.</p>
+        <p>&copy; 2025 가속뇌 운동 시뮬레이션. DrdannyFM.</p>
       </footer>
     </div>
   );
