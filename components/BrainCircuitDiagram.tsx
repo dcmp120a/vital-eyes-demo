@@ -20,12 +20,12 @@ interface Connection {
 }
 
 const regionsData: BrainRegion[] = [
-  { id: 'pfc', name: '전전두피질 (Prefrontal Cortex)', abbreviation: 'PFC', x: 150, y: 150, radius: 60 },
-  { id: 'fef', name: '전두안구영역 (Frontal Eye Fields)', abbreviation: 'FEF', x: 250, y: 280, radius: 50 },
-  { id: 'sef', name: '보조안구영역 (Supplementary Eye Fields)', abbreviation: 'SEF', x: 100, y: 300, radius: 45 },
-  { id: 'pef', name: '두정안구영역 (Parietal Eye Fields / PPC)', abbreviation: 'PEF/PPC', x: 480, y: 220, radius: 55 },
-  { id: 'sc', name: '상구 (Superior Colliculus)', abbreviation: 'SC', x: 350, y: 450, radius: 50 },
-  { id: 'bg', name: '기저핵 (Basal Ganglia)', abbreviation: 'BG', x: 150, y: 480, radius: 45 },
+  { id: 'pfc', name: '전전두피질 (Prefrontal Cortex)', abbreviation: 'PFC', x: 300, y: 120, radius: 60 },
+  { id: 'sef', name: '보조안구영역 (Supplementary Eye Fields)', abbreviation: 'SEF', x: 200, y: 200, radius: 45 },
+  { id: 'fef', name: '전두안구영역 (Frontal Eye Fields)', abbreviation: 'FEF', x: 400, y: 200, radius: 50 },
+  { id: 'pef', name: '두정안구영역 (Parietal Eye Fields / PPC)', abbreviation: 'PEF/PPC', x: 500, y: 150, radius: 55 },
+  { id: 'sc', name: '상구 (Superior Colliculus)', abbreviation: 'SC', x: 450, y: 450, radius: 50 },
+  { id: 'bg', name: '기저핵 (Basal Ganglia)', abbreviation: 'BG', x: 150, y: 450, radius: 45 },
 ];
 
 const connectionsData: Connection[] = [
@@ -223,6 +223,22 @@ const BrainCircuitDiagram: React.FC = () => {
         </defs>
 
         <rect width={SVG_WIDTH} height={SVG_HEIGHT} fill="url(#svgBgGradient)" />
+
+        {/* 뇌 윤곽선 배경 */}
+        <g opacity="0.1" fill="none" stroke="rgba(59, 130, 246, 0.3)" strokeWidth="2">
+          {/* 왼쪽 뇌반구 */}
+          <path d="M 80 120 Q 60 180 80 240 Q 100 300 120 360 Q 140 420 160 480 Q 180 520 200 540 Q 220 560 240 570 Q 260 580 280 580 Q 300 580 320 570 Q 340 560 360 540 Q 380 520 400 480 Q 420 420 440 360 Q 460 300 480 240 Q 500 180 480 120 Q 460 80 440 60 Q 420 40 400 30 Q 380 20 360 20 Q 340 20 320 30 Q 300 40 280 60 Q 260 80 240 120 Q 220 160 200 120 Q 180 80 160 60 Q 140 40 120 30 Q 100 20 80 20 Q 60 20 40 30 Q 20 40 0 60 Q -20 80 0 120 Z" />
+          
+          {/* 오른쪽 뇌반구 */}
+          <path d="M 570 120 Q 590 180 570 240 Q 550 300 530 360 Q 510 420 490 480 Q 470 520 450 540 Q 430 560 410 570 Q 390 580 370 580 Q 350 580 330 570 Q 310 560 290 540 Q 270 520 250 480 Q 230 420 210 360 Q 190 300 170 240 Q 150 180 170 120 Q 190 80 210 60 Q 230 40 250 30 Q 270 20 290 20 Q 310 20 330 30 Q 350 40 370 60 Q 390 80 410 120 Q 430 160 450 120 Q 470 80 490 60 Q 510 40 530 30 Q 550 20 570 20 Q 590 20 610 30 Q 630 40 650 60 Q 670 80 650 120 Z" />
+          
+          {/* 뇌간 */}
+          <path d="M 300 580 L 320 600 L 340 620 L 360 640 L 380 650 L 400 650 L 420 640 L 440 620 L 460 600 L 480 580" />
+          
+          {/* 소뇌 */}
+          <ellipse cx="325" cy="620" rx="25" ry="15" />
+          <ellipse cx="375" cy="620" rx="25" ry="15" />
+        </g>
 
         {(currentPhase === 'CIRCUIT_A' || currentPhase === 'CIRCUIT_B' || currentPhase === 'FIREWORKS' || currentPhase === 'ENDING' || currentPhase === 'ENDING_SMILE_EFFECT') && (
           <>
