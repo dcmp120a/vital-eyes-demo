@@ -1,0 +1,6 @@
+{
+  "name": "Vital Eyes Demo",
+  "description": "전두엽을 중심으로 한 도약 안구 운동 조절 신경 회로를 시각화하고, 연결 애니메이션을 통해 정보 흐름을 보여주는 웹 애플리케이션입니다.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
