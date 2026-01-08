@@ -38,7 +38,7 @@ const BrainRegionNode: React.FC<BrainRegionNodeProps> = ({ id, name, abbreviatio
       <text
         textAnchor="middle"
         dy=".3em"
-        className={`${textColor} font-semibold text-lg select-none pointer-events-none transition-colors duration-300`}
+        className={`${textColor} font-semibold text-[9px] select-none pointer-events-none transition-colors duration-300`}
       >
         {abbreviation}
       </text>

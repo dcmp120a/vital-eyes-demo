@@ -15,8 +15,8 @@ interface EyeSaccadeAnimationProps {
   targetBColor: string;
 }
 
-const TARGET_SIZE = 25;
-const PADDING = 20;
+const TARGET_SIZE = 12;
+const PADDING = 10;
 const MOVEMENT_DURATION = 333;
 const PAUSE_DURATION = 100;
 const SMILE_ANIMATION_DURATION = 533;
@@ -39,7 +39,7 @@ const EyeSaccadeAnimation: React.FC<EyeSaccadeAnimationProps> = ({
   targetBColor,
 }) => {
   const headCenterX = width / 2;
-  const headCenterY = height / 2 + 20; // 얼굴 이미지를 아래로 이동
+  const headCenterY = height / 2 + 10; // 얼굴 이미지를 아래로 이동
 
   const HEAD_RADIUS = Math.min(width / 4, height / 2.5);
   const IRIS_RADIUS = HEAD_RADIUS * 0.35;
@@ -268,7 +268,7 @@ const EyeSaccadeAnimation: React.FC<EyeSaccadeAnimationProps> = ({
           className="transition-colors duration-200"
           aria-label="Target A"
         />
-        <text x={targetAX} y={height/2 + TARGET_SIZE + 12} textAnchor="middle" fontSize="10" fontWeight="bold" className="fill-gray-700">TARGET A</text>
+        <text x={targetAX} y={height/2 + TARGET_SIZE + 6} textAnchor="middle" fontSize="6" fontWeight="bold" className="fill-gray-700">TARGET A</text>
 
         <rect
           x={width - PADDING - TARGET_SIZE}
@@ -276,12 +276,12 @@ const EyeSaccadeAnimation: React.FC<EyeSaccadeAnimationProps> = ({
           width={TARGET_SIZE}
           height={TARGET_SIZE}
           fill={currentTargetDisplay === 'B' ? targetBColor : targetBColor.replace(/(\d+)%\)/, (match, p1) => `${Math.max(20, parseInt(p1)-30)}%)`)}
-          rx="4"
+          rx="2"
           className="transition-colors duration-200"
           aria-label="Target B"
         />
-        <text x={targetBX} y={height/2 + TARGET_SIZE + 12} textAnchor="middle" fontSize="10" fontWeight="bold" className="fill-gray-700">TARGET B</text>
-        <text x={width/2} y={PADDING - 2} textAnchor="middle" fontSize="10" className="fill-gray-700 uppercase tracking-wider">Saccadic Eye Movement</text>
+        <text x={targetBX} y={height/2 + TARGET_SIZE + 6} textAnchor="middle" fontSize="6" fontWeight="bold" className="fill-gray-700">TARGET B</text>
+        <text x={width/2} y={PADDING} textAnchor="middle" fontSize="6" className="fill-gray-700 uppercase tracking-wider">Saccadic Eye Movement</text>
       </g>
 
       <circle

@@ -49,20 +49,8 @@ const App: React.FC = () => {
             <li>기억력과 판단력이 중요한 성인과 직장인</li>
             <li>인지 훈련이 필요한 고령층까지!</li>
           </ul>
-
-          <hr className="border-gray-200 my-6" />
-
-          <p className="text-md font-semibold text-center text-blue-600 leading-relaxed">
-            지금 바로 이 애니메이션 기반 뇌 훈련을 경험하세요.
-          </p>
-          <p className="text-sm text-center text-gray-600 mt-1">
-            눈을 움직이는 3분이, 당신의 뇌를 하루 종일 더 강하게 만듭니다.
-          </p>
         </aside>
       </main>
-       <footer className="w-full max-w-5xl mt-12 text-center text-gray-500 text-xs">
-        <p>&copy; 2025 가속뇌 운동 시뮬레이션. DrdannyFM.</p>
-      </footer>
     </div>
   );
 };
